@@ -81,8 +81,8 @@ extension AddNoticeViewController {
     
     @objc func didChangeCategory(sender: UISegmentedControl) {
         let selectedIndex = categorySegmentedControl.selectedSegmentIndex
-        guard let noticeCategory = AddNoticeCategory(rawValue: selectedIndex) else { return }
-        selectedCategory = noticeCategory.name
+        guard let addNoticeCategory = AddNoticeCategory(rawValue: selectedIndex) else { return }
+        selectedCategory = addNoticeCategory.name
     }
 }
 

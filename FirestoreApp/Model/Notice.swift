@@ -20,28 +20,13 @@ class Notice {
     }
     
     static func parse(snapshot: QuerySnapshot) -> [Notice] {
-//        var notices = [Notice]()
-//        for document in snapshot.documents {
-//            let userName = document[String(describing: FirestoreDocument.username)] as? String ?? ""
-//            let timeStamp = document[String(describing: FirestoreDocument.timestamp)] as? Date ?? Date()
-//            let noticeText = document[String(describing: FirestoreDocument.noticeText)] as? String ?? ""
-//            let numLikes = document[String(describing: FirestoreDocument.numLikes)] as? Int ?? 0
-//            let numComments = document[String(describing: FirestoreDocument.numComments)] as? Int ?? 0
-//            let documentId = document[String(describing: FirestoreDocument.documentId)] as? String ?? ""
-//
-//            let notice = Notice(userName: userName, timeStamp: timeStamp, noticeText: noticeText, numLikes: numLikes, numComments: numComments, documentId: documentId)
-//
-//            notices.append(notice)
-//        }
-//        return notices
-        
         let notices = snapshot.documents.map { document -> Notice in
             let userName = document[String(describing: FirestoreDocument.username)] as? String ?? ""
             let timeStamp = document[String(describing: FirestoreDocument.timestamp)] as? Date ?? Date()
             let noticeText = document[String(describing: FirestoreDocument.noticeText)] as? String ?? ""
             let numLikes = document[String(describing: FirestoreDocument.numLikes)] as? Int ?? 0
             let numComments = document[String(describing: FirestoreDocument.numComments)] as? Int ?? 0
-            let documentId = document[String(describing: FirestoreDocument.documentId)] as? String ?? ""
+            let documentId = document.documentID
 
             return Notice(userName: userName, timeStamp: timeStamp, noticeText: noticeText, numLikes: numLikes, numComments: numComments, documentId: documentId)
         }

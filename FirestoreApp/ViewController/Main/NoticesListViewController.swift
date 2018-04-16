@@ -26,26 +26,24 @@ class NoticesListViewController: UIViewController {
     // Variables
     private var notices = [Notice]()
     private var noticesCollectionRef: CollectionReference!
+    private var noticesListener: ListenerRegistration!
+    private var selectedCategory = NoticesListCategory.tweet.name
     
     // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        setupSegmentedControl()
         setupTableView()
-        
         noticesCollectionRef = Firestore.firestore().collection(String(describing: FirestoreCollection.notices))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        noticesCollectionRef.getDocuments { (snapshot, error) in
-            if let error = error {
-                debugPrint("Error fetching docs: \(error.localizedDescription)")
-            } else {
-                guard let snapshot = snapshot else { return }
-                self.notices = Notice.parse(snapshot: snapshot)
-                self.tableView.reloadData()
-            }
-        }
+        setupListener()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        noticesListener.remove()
     }
 }
 
@@ -56,6 +54,10 @@ extension NoticesListViewController {
         navigationItem.rightBarButtonItem = addButton
     }
 
+    func setupSegmentedControl() {
+        categorySegmentedControl.addTarget(self, action: #selector(didChangeCategory), for: .valueChanged)
+    }
+    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,12 +67,41 @@ extension NoticesListViewController {
         tableView.register(UINib(nibName: "NoticeTableViewCell", bundle: nil), forCellReuseIdentifier: "NoticeTableViewCell")
     }
 
+    func setupListener() {
+        
+        if selectedCategory == String(describing: NoticesListCategory.favorite) {
+            
+        }
+        
+        noticesListener = noticesCollectionRef
+            .whereField(String(describing: FirestoreDocument.category), isEqualTo: selectedCategory)
+            .order(by: String(describing: FirestoreDocument.timestamp), descending: true)
+            .addSnapshotListener { (snapshot, error) in
+                if let error = error {
+                    debugPrint("Error fetching docs: \(error.localizedDescription)")
+                } else {
+                    self.notices.removeAll()
+                    guard let snapshot = snapshot else { return }
+                    self.notices = Notice.parse(snapshot: snapshot)
+                    self.tableView.reloadData()
+                }
+        }
+    }
 }
 
 extension NoticesListViewController {
     @objc func didTapAddButton(sender: UIBarButtonItem) {
         let addNoticeViewController = AddNoticeViewController()
         present(addNoticeViewController, animated: true, completion: nil)
+    }
+    
+    @objc func didChangeCategory(sender: UISegmentedControl) {
+        let selectedIndex = categorySegmentedControl.selectedSegmentIndex
+        guard let noticesListCategory = NoticesListCategory(rawValue: selectedIndex) else { return }
+        selectedCategory = noticesListCategory.name
+        
+        noticesListener.remove()
+        setupListener()
     }
 }
 
