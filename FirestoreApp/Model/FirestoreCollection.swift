@@ -2,7 +2,6 @@
 import Foundation
 
 enum FirestoreCollection {
-
     case notices
 }
 

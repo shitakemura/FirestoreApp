@@ -11,11 +11,13 @@
 		186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDAF20842D5D00EC84D6 /* Assets.xcassets */; };
 		186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDB120842D5D00EC84D6 /* LaunchScreen.storyboard */; };
 		186EFDBB20842F4700EC84D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDBA20842F4600EC84D6 /* GoogleService-Info.plist */; };
-		186EFDC0208437ED00EC84D6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDBE208437ED00EC84D6 /* MainViewController.swift */; };
-		186EFDC1208437ED00EC84D6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDBF208437ED00EC84D6 /* MainViewController.xib */; };
+		186EFDC0208437ED00EC84D6 /* NoticesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDBE208437ED00EC84D6 /* NoticesListViewController.swift */; };
+		186EFDC1208437ED00EC84D6 /* NoticesListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDBF208437ED00EC84D6 /* NoticesListViewController.xib */; };
 		186EFDC620843BD200EC84D6 /* AddNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDC420843BD200EC84D6 /* AddNoticeViewController.swift */; };
 		186EFDC720843BD200EC84D6 /* AddNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDC520843BD200EC84D6 /* AddNoticeViewController.xib */; };
 		186EFDC920844ADC00EC84D6 /* FirestoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDC820844ADC00EC84D6 /* FirestoreCollection.swift */; };
+		186EFDCC2084608300EC84D6 /* NoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDCA2084608300EC84D6 /* NoticeTableViewCell.swift */; };
+		186EFDCD2084608300EC84D6 /* NoticeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDCB2084608300EC84D6 /* NoticeTableViewCell.xib */; };
 		3D64EB48BDBC1DDA02804391 /* Pods_FirestoreApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0AF7F1DE656523E30B265B /* Pods_FirestoreApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,11 +28,13 @@
 		186EFDB220842D5D00EC84D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		186EFDB420842D5D00EC84D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186EFDBA20842F4600EC84D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		186EFDBE208437ED00EC84D6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		186EFDBF208437ED00EC84D6 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		186EFDBE208437ED00EC84D6 /* NoticesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticesListViewController.swift; sourceTree = "<group>"; };
+		186EFDBF208437ED00EC84D6 /* NoticesListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticesListViewController.xib; sourceTree = "<group>"; };
 		186EFDC420843BD200EC84D6 /* AddNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoticeViewController.swift; sourceTree = "<group>"; };
 		186EFDC520843BD200EC84D6 /* AddNoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoticeViewController.xib; sourceTree = "<group>"; };
 		186EFDC820844ADC00EC84D6 /* FirestoreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCollection.swift; sourceTree = "<group>"; };
+		186EFDCA2084608300EC84D6 /* NoticeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeTableViewCell.swift; sourceTree = "<group>"; };
+		186EFDCB2084608300EC84D6 /* NoticeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticeTableViewCell.xib; sourceTree = "<group>"; };
 		9B0AF7F1DE656523E30B265B /* Pods_FirestoreApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36EC55F3D77E8C51358B68F /* Pods-FirestoreApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirestoreApp/Pods-FirestoreApp.release.xcconfig"; sourceTree = "<group>"; };
 		EF17A1D70014F3FDA1819134 /* Pods-FirestoreApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirestoreApp/Pods-FirestoreApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,8 +104,10 @@
 		186EFDC220843B3E00EC84D6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				186EFDBF208437ED00EC84D6 /* MainViewController.xib */,
-				186EFDBE208437ED00EC84D6 /* MainViewController.swift */,
+				186EFDBF208437ED00EC84D6 /* NoticesListViewController.xib */,
+				186EFDBE208437ED00EC84D6 /* NoticesListViewController.swift */,
+				186EFDCB2084608300EC84D6 /* NoticeTableViewCell.xib */,
+				186EFDCA2084608300EC84D6 /* NoticeTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -196,8 +202,9 @@
 				186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */,
 				186EFDBB20842F4700EC84D6 /* GoogleService-Info.plist in Resources */,
 				186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */,
-				186EFDC1208437ED00EC84D6 /* MainViewController.xib in Resources */,
+				186EFDC1208437ED00EC84D6 /* NoticesListViewController.xib in Resources */,
 				186EFDC720843BD200EC84D6 /* AddNoticeViewController.xib in Resources */,
+				186EFDCD2084608300EC84D6 /* NoticeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +289,8 @@
 			files = (
 				186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */,
 				186EFDC620843BD200EC84D6 /* AddNoticeViewController.swift in Sources */,
-				186EFDC0208437ED00EC84D6 /* MainViewController.swift in Sources */,
+				186EFDC0208437ED00EC84D6 /* NoticesListViewController.swift in Sources */,
+				186EFDCC2084608300EC84D6 /* NoticeTableViewCell.swift in Sources */,
 				186EFDC920844ADC00EC84D6 /* FirestoreCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

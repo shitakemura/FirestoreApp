@@ -2,7 +2,7 @@
 import UIKit
 import Firebase
 
-enum NoticeCategory: Int {
+enum AddNoticeCategory: Int {
     case tweet = 0
     case notification = 1
     case request = 2
@@ -24,7 +24,7 @@ class AddNoticeViewController: UIViewController {
     @IBOutlet private weak var noticeTextView: UITextView!
     @IBOutlet private weak var postButton: UIButton!
     
-    private var selectedCategory = NoticeCategory.tweet.name
+    private var selectedCategory = AddNoticeCategory.tweet.name
     
     
     override func viewDidLoad() {
@@ -68,7 +68,7 @@ extension AddNoticeViewController {
                 String(describing: FirestoreDocument.numLikes): 0,
                 String(describing: FirestoreDocument.noticeText): noticeTextView.text,
                 String(describing: FirestoreDocument.timestamp): FieldValue.serverTimestamp(),
-                String(describing: FirestoreDocument.username): userName
+                String(describing: FirestoreDocument.username): userName,
             ]) { (error) in
                 if let error = error {
                     debugPrint("Error adding document: \(error.localizedDescription)")
@@ -80,7 +80,7 @@ extension AddNoticeViewController {
     
     @objc func didChangeCategory(sender: UISegmentedControl) {
         let selectedIndex = categorySegmentedControl.selectedSegmentIndex
-        guard let noticeCategory = NoticeCategory(rawValue: selectedIndex) else { return }
+        guard let noticeCategory = AddNoticeCategory(rawValue: selectedIndex) else { return }
         selectedCategory = noticeCategory.name
     }
 }

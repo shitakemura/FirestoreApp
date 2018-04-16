@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoticesListViewController" customModule="FirestoreApp" customModuleProvider="target">
+            <connections>
+                <outlet property="categorySegmentedControl" destination="Xsp-kI-bc3" id="7Ea-zh-93f"/>
+                <outlet property="tableView" destination="ePB-ab-LkM" id="Jwy-cY-gT5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xsp-kI-bc3">
+                    <rect key="frame" x="20" y="40" width="335" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="ADL-dU-zT0"/>
+                    </constraints>
+                    <segments>
+                        <segment title="ひとりごと"/>
+                        <segment title="お知らせ"/>
+                        <segment title="お願い"/>
+                        <segment title="⭐️"/>
+                    </segments>
+                </segmentedControl>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ePB-ab-LkM">
+                    <rect key="frame" x="0.0" y="92" width="375" height="575"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Xsp-kI-bc3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="6V4-wd-jWS"/>
+                <constraint firstItem="ePB-ab-LkM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CMK-13-fx7"/>
+                <constraint firstItem="ePB-ab-LkM" firstAttribute="top" secondItem="Xsp-kI-bc3" secondAttribute="bottom" constant="20" id="KZm-TD-4nk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Xsp-kI-bc3" secondAttribute="trailing" constant="20" id="NoZ-T4-QQU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ePB-ab-LkM" secondAttribute="bottom" id="Tzb-dK-rT8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ePB-ab-LkM" secondAttribute="trailing" id="hfy-1H-SLl"/>
+                <constraint firstItem="Xsp-kI-bc3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="lkd-02-WYr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
