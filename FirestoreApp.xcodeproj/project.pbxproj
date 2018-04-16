@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		183149252084A48B00E51BDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183149232084A48B00E51BDA /* LoginViewController.swift */; };
 		183149262084A48B00E51BDA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183149242084A48B00E51BDA /* LoginViewController.xib */; };
-		183149292084A5BF00E51BDA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183149272084A5BF00E51BDA /* SignUpViewController.swift */; };
-		1831492A2084A5BF00E51BDA /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183149282084A5BF00E51BDA /* SignUpViewController.xib */; };
+		183149292084A5BF00E51BDA /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183149272084A5BF00E51BDA /* CreateAccountViewController.swift */; };
+		1831492A2084A5BF00E51BDA /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183149282084A5BF00E51BDA /* CreateAccountViewController.xib */; };
 		186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDA820842D5D00EC84D6 /* AppDelegate.swift */; };
 		186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDAF20842D5D00EC84D6 /* Assets.xcassets */; };
 		186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDB120842D5D00EC84D6 /* LaunchScreen.storyboard */; };
@@ -29,8 +29,8 @@
 /* Begin PBXFileReference section */
 		183149232084A48B00E51BDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		183149242084A48B00E51BDA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
-		183149272084A5BF00E51BDA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		183149282084A5BF00E51BDA /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		183149272084A5BF00E51BDA /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		183149282084A5BF00E51BDA /* CreateAccountViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 		186EFDA520842D5D00EC84D6 /* FirestoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186EFDA820842D5D00EC84D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		186EFDAF20842D5D00EC84D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 			children = (
 				183149242084A48B00E51BDA /* LoginViewController.xib */,
 				183149232084A48B00E51BDA /* LoginViewController.swift */,
-				183149282084A5BF00E51BDA /* SignUpViewController.xib */,
-				183149272084A5BF00E51BDA /* SignUpViewController.swift */,
+				183149282084A5BF00E51BDA /* CreateAccountViewController.xib */,
+				183149272084A5BF00E51BDA /* CreateAccountViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -228,7 +228,7 @@
 				186EFDC1208437ED00EC84D6 /* NoticesListViewController.xib in Resources */,
 				186EFDC720843BD200EC84D6 /* AddNoticeViewController.xib in Resources */,
 				183149262084A48B00E51BDA /* LoginViewController.xib in Resources */,
-				1831492A2084A5BF00E51BDA /* SignUpViewController.xib in Resources */,
+				1831492A2084A5BF00E51BDA /* CreateAccountViewController.xib in Resources */,
 				186EFDCD2084608300EC84D6 /* NoticeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +314,7 @@
 			files = (
 				183149252084A48B00E51BDA /* LoginViewController.swift in Sources */,
 				186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */,
-				183149292084A5BF00E51BDA /* SignUpViewController.swift in Sources */,
+				183149292084A5BF00E51BDA /* CreateAccountViewController.swift in Sources */,
 				186EFDC620843BD200EC84D6 /* AddNoticeViewController.swift in Sources */,
 				186EFDC0208437ED00EC84D6 /* NoticesListViewController.swift in Sources */,
 				186EFDD1208468F900EC84D6 /* Notice.swift in Sources */,

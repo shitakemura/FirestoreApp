@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
-        
     }
 }
 
@@ -28,11 +27,18 @@ extension LoginViewController {
 
 extension LoginViewController {
     @objc func didTapLogin(sender: UIButton) {
-        
+        guard let email = emailTextField.text, let password = passwordTextField.text else { return }
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if let error = error {
+                debugPrint("Error signing in: \(error)")
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @objc func didTapCreateAccount(sender: UIButton) {
-        let signUpViewController = SignUpViewController()
+        let signUpViewController = CreateAccountViewController()
         present(signUpViewController, animated: true, completion: nil)
     }
 }

@@ -2,7 +2,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: UIViewController {
+class CreateAccountViewController: UIViewController {
     // Outlets
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -17,7 +17,7 @@ class SignUpViewController: UIViewController {
     }
 }
 
-extension SignUpViewController {
+extension CreateAccountViewController {
     func setupButton() {
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccount), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(didTapCancel), for: .touchUpInside)
@@ -26,7 +26,7 @@ extension SignUpViewController {
     }
 }
 
-extension SignUpViewController {
+extension CreateAccountViewController {
     @objc func didTapCreateAccount(sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text, let userName = userNameTextField.text else { return }
         

@@ -28,6 +28,7 @@ class NoticesListViewController: UIViewController {
     private var noticesCollectionRef: CollectionReference!
     private var noticesListener: ListenerRegistration!
     private var selectedCategory = NoticesListCategory.tweet.name
+    private var handle: AuthStateDidChangeListenerHandle?
     
     // LifeCycle
     override func viewDidLoad() {
@@ -39,11 +40,20 @@ class NoticesListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setupListener()
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil {
+                let loginViewController = LoginViewController()
+                self.present(loginViewController, animated: true, completion: nil)
+            } else {
+                self.setupListener()
+            }
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        noticesListener.remove()
+        if noticesListener != nil {
+            noticesListener.remove()
+        }
     }
 }
 
