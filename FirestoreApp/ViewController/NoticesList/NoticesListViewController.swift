@@ -60,6 +60,9 @@ class NoticesListViewController: UIViewController {
 extension NoticesListViewController {
     func setupNavigation() {
         title = "連絡帳"
+        let logoutButton = UIBarButtonItem(title: "ログアウト", style: .plain, target: self, action: #selector(didTapLogout))
+        navigationItem.leftBarButtonItem = logoutButton
+        
         let addButton = UIBarButtonItem(image: UIImage(named: "addThoughtIcon"), style: .plain, target: self, action: #selector(didTapAdd))
         navigationItem.rightBarButtonItem = addButton
     }
@@ -100,6 +103,15 @@ extension NoticesListViewController {
 }
 
 extension NoticesListViewController {
+    @objc func didTapLogout(sender: UIBarButtonItem) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            debugPrint("Error signing out: \(signOutError.localizedDescription)")
+        }
+    }
+    
     @objc func didTapAdd(sender: UIBarButtonItem) {
         let addNoticeViewController = AddNoticeViewController()
         present(addNoticeViewController, animated: true, completion: nil)
