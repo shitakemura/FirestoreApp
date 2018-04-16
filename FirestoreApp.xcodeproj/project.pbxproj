@@ -8,23 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDA820842D5D00EC84D6 /* AppDelegate.swift */; };
-		186EFDAB20842D5D00EC84D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDAA20842D5D00EC84D6 /* ViewController.swift */; };
-		186EFDAE20842D5D00EC84D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDAC20842D5D00EC84D6 /* Main.storyboard */; };
 		186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDAF20842D5D00EC84D6 /* Assets.xcassets */; };
 		186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDB120842D5D00EC84D6 /* LaunchScreen.storyboard */; };
 		186EFDBB20842F4700EC84D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDBA20842F4600EC84D6 /* GoogleService-Info.plist */; };
+		186EFDC0208437ED00EC84D6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDBE208437ED00EC84D6 /* MainViewController.swift */; };
+		186EFDC1208437ED00EC84D6 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDBF208437ED00EC84D6 /* MainViewController.xib */; };
+		186EFDC620843BD200EC84D6 /* AddNoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDC420843BD200EC84D6 /* AddNoticeViewController.swift */; };
+		186EFDC720843BD200EC84D6 /* AddNoticeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDC520843BD200EC84D6 /* AddNoticeViewController.xib */; };
 		3D64EB48BDBC1DDA02804391 /* Pods_FirestoreApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0AF7F1DE656523E30B265B /* Pods_FirestoreApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		186EFDA520842D5D00EC84D6 /* FirestoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186EFDA820842D5D00EC84D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		186EFDAA20842D5D00EC84D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		186EFDAD20842D5D00EC84D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		186EFDAF20842D5D00EC84D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186EFDB220842D5D00EC84D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		186EFDB420842D5D00EC84D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186EFDBA20842F4600EC84D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		186EFDBE208437ED00EC84D6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		186EFDBF208437ED00EC84D6 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		186EFDC420843BD200EC84D6 /* AddNoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoticeViewController.swift; sourceTree = "<group>"; };
+		186EFDC520843BD200EC84D6 /* AddNoticeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNoticeViewController.xib; sourceTree = "<group>"; };
 		9B0AF7F1DE656523E30B265B /* Pods_FirestoreApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirestoreApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36EC55F3D77E8C51358B68F /* Pods-FirestoreApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirestoreApp/Pods-FirestoreApp.release.xcconfig"; sourceTree = "<group>"; };
 		EF17A1D70014F3FDA1819134 /* Pods-FirestoreApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirestoreApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirestoreApp/Pods-FirestoreApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -64,14 +68,48 @@
 			isa = PBXGroup;
 			children = (
 				186EFDA820842D5D00EC84D6 /* AppDelegate.swift */,
-				186EFDAA20842D5D00EC84D6 /* ViewController.swift */,
-				186EFDAC20842D5D00EC84D6 /* Main.storyboard */,
 				186EFDAF20842D5D00EC84D6 /* Assets.xcassets */,
 				186EFDB120842D5D00EC84D6 /* LaunchScreen.storyboard */,
 				186EFDB420842D5D00EC84D6 /* Info.plist */,
 				186EFDBA20842F4600EC84D6 /* GoogleService-Info.plist */,
+				186EFDBC208434C800EC84D6 /* ViewController */,
+				186EFDBD208434D100EC84D6 /* Model */,
 			);
 			path = FirestoreApp;
+			sourceTree = "<group>";
+		};
+		186EFDBC208434C800EC84D6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				186EFDC220843B3E00EC84D6 /* Main */,
+				186EFDC320843BB600EC84D6 /* AddNotice */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		186EFDBD208434D100EC84D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		186EFDC220843B3E00EC84D6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				186EFDBF208437ED00EC84D6 /* MainViewController.xib */,
+				186EFDBE208437ED00EC84D6 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		186EFDC320843BB600EC84D6 /* AddNotice */ = {
+			isa = PBXGroup;
+			children = (
+				186EFDC520843BD200EC84D6 /* AddNoticeViewController.xib */,
+				186EFDC420843BD200EC84D6 /* AddNoticeViewController.swift */,
+			);
+			path = AddNotice;
 			sourceTree = "<group>";
 		};
 		9C40FBFEFE966791B87720D8 /* Frameworks */ = {
@@ -155,7 +193,8 @@
 				186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */,
 				186EFDBB20842F4700EC84D6 /* GoogleService-Info.plist in Resources */,
 				186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */,
-				186EFDAE20842D5D00EC84D6 /* Main.storyboard in Resources */,
+				186EFDC1208437ED00EC84D6 /* MainViewController.xib in Resources */,
+				186EFDC720843BD200EC84D6 /* AddNoticeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,22 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186EFDAB20842D5D00EC84D6 /* ViewController.swift in Sources */,
 				186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */,
+				186EFDC620843BD200EC84D6 /* AddNoticeViewController.swift in Sources */,
+				186EFDC0208437ED00EC84D6 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		186EFDAC20842D5D00EC84D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				186EFDAD20842D5D00EC84D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		186EFDB120842D5D00EC84D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -386,7 +418,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FirestoreApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shitakemura.FirestoreApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -401,7 +436,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FirestoreApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.shitakemura.FirestoreApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
