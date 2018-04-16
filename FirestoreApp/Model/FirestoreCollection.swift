@@ -12,4 +12,5 @@ enum FirestoreDocument {
     case noticeText
     case timestamp
     case username
+    case documentId
 }

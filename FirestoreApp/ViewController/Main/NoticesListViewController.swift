@@ -1,5 +1,6 @@
 
 import UIKit
+import Firebase
 
 enum NoticesListCategory: Int {
     case tweet = 0
@@ -17,16 +18,34 @@ enum NoticesListCategory: Int {
     }
 }
 
-
 class NoticesListViewController: UIViewController {
-
-    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
+    // Outlets
+    @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
+    @IBOutlet private weak var tableView: UITableView!
     
+    // Variables
+    private var notices = [Notice]()
+    private var noticesCollectionRef: CollectionReference!
+    
+    // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
         setupTableView()
+        
+        noticesCollectionRef = Firestore.firestore().collection(String(describing: FirestoreCollection.notices))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        noticesCollectionRef.getDocuments { (snapshot, error) in
+            if let error = error {
+                debugPrint("Error fetching docs: \(error.localizedDescription)")
+            } else {
+                guard let snapshot = snapshot else { return }
+                self.notices = Notice.parse(snapshot: snapshot)
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -40,7 +59,9 @@ extension NoticesListViewController {
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 100
+        tableView.separatorStyle = .none
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.register(UINib(nibName: "NoticeTableViewCell", bundle: nil), forCellReuseIdentifier: "NoticeTableViewCell")
     }
 
@@ -51,7 +72,6 @@ extension NoticesListViewController {
         let addNoticeViewController = AddNoticeViewController()
         present(addNoticeViewController, animated: true, completion: nil)
     }
-    
 }
 
 extension NoticesListViewController: UITableViewDelegate {
@@ -62,14 +82,14 @@ extension NoticesListViewController: UITableViewDelegate {
 
 extension NoticesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return notices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeTableViewCell", for: indexPath) as? NoticeTableViewCell else {
             return UITableViewCell()
         }
-        
+        cell.configureCell(notice: notices[indexPath.row])
         return cell
     }
 }

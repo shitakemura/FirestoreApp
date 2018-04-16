@@ -76,6 +76,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="likesImageLabel" destination="X4a-zd-F7c" id="FAy-sU-NzY"/>
+                <outlet property="noticeTextLabel" destination="C2g-CH-Msk" id="qZi-cu-AlX"/>
+                <outlet property="numLikesLabel" destination="0DY-nv-PZs" id="19I-ps-ef2"/>
+                <outlet property="timeStampLabel" destination="hKF-Gv-AcF" id="w9V-cO-O64"/>
+                <outlet property="userNameLabel" destination="qXA-iY-iq5" id="dcQ-Gf-jw3"/>
+            </connections>
             <point key="canvasLocation" x="72.5" y="59"/>
         </tableViewCell>
     </objects>

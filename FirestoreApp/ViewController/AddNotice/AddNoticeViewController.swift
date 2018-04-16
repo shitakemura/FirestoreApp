@@ -17,16 +17,17 @@ enum AddNoticeCategory: Int {
 }
 
 class AddNoticeViewController: UIViewController {
-
+    // Outlets
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
     @IBOutlet private weak var userNameTextField: UITextField!
     @IBOutlet private weak var noticeTextView: UITextView!
     @IBOutlet private weak var postButton: UIButton!
     
+    // Variables
     private var selectedCategory = AddNoticeCategory.tweet.name
     
-    
+    // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
