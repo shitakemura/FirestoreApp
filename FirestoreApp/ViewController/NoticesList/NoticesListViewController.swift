@@ -50,7 +50,7 @@ class NoticesListViewController: UIViewController {
 extension NoticesListViewController {
     func setupNavigation() {
         title = "連絡帳"
-        let addButton = UIBarButtonItem(image: UIImage(named: "addThoughtIcon"), style: .plain, target: self, action: #selector(didTapAddButton))
+        let addButton = UIBarButtonItem(image: UIImage(named: "addThoughtIcon"), style: .plain, target: self, action: #selector(didTapAdd))
         navigationItem.rightBarButtonItem = addButton
     }
 
@@ -69,9 +69,9 @@ extension NoticesListViewController {
 
     func setupListener() {
         
-        if selectedCategory == String(describing: NoticesListCategory.favorite) {
-            
-        }
+//        if selectedCategory == String(describing: NoticesListCategory.favorite) {
+//            
+//        }
         
         noticesListener = noticesCollectionRef
             .whereField(String(describing: FirestoreDocument.category), isEqualTo: selectedCategory)
@@ -90,7 +90,7 @@ extension NoticesListViewController {
 }
 
 extension NoticesListViewController {
-    @objc func didTapAddButton(sender: UIBarButtonItem) {
+    @objc func didTapAdd(sender: UIBarButtonItem) {
         let addNoticeViewController = AddNoticeViewController()
         present(addNoticeViewController, animated: true, completion: nil)
     }

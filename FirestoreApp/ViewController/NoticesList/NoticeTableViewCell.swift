@@ -9,13 +9,13 @@ class NoticeTableViewCell: UITableViewCell {
     @IBOutlet private weak var noticeTextLabel: UILabel!
     @IBOutlet private weak var likesImageLabel: UILabel!
     @IBOutlet private weak var numLikesLabel: UILabel!
-    
+
+    // Variables
     private var notice: Notice!
     
     // LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setupLike()
     }
 }

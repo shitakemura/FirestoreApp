@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183149252084A48B00E51BDA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183149232084A48B00E51BDA /* LoginViewController.swift */; };
+		183149262084A48B00E51BDA /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183149242084A48B00E51BDA /* LoginViewController.xib */; };
+		183149292084A5BF00E51BDA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183149272084A5BF00E51BDA /* SignUpViewController.swift */; };
+		1831492A2084A5BF00E51BDA /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183149282084A5BF00E51BDA /* SignUpViewController.xib */; };
 		186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDA820842D5D00EC84D6 /* AppDelegate.swift */; };
 		186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDAF20842D5D00EC84D6 /* Assets.xcassets */; };
 		186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDB120842D5D00EC84D6 /* LaunchScreen.storyboard */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183149232084A48B00E51BDA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		183149242084A48B00E51BDA /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		183149272084A5BF00E51BDA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		183149282084A5BF00E51BDA /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		186EFDA520842D5D00EC84D6 /* FirestoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186EFDA820842D5D00EC84D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		186EFDAF20842D5D00EC84D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +62,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1848DF6B2084A0CE00E34BD3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				183149242084A48B00E51BDA /* LoginViewController.xib */,
+				183149232084A48B00E51BDA /* LoginViewController.swift */,
+				183149282084A5BF00E51BDA /* SignUpViewController.xib */,
+				183149272084A5BF00E51BDA /* SignUpViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		186EFD9C20842D5D00EC84D6 = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +108,8 @@
 		186EFDBC208434C800EC84D6 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				186EFDC220843B3E00EC84D6 /* Main */,
+				1848DF6B2084A0CE00E34BD3 /* Login */,
+				186EFDC220843B3E00EC84D6 /* NoticesList */,
 				186EFDC320843BB600EC84D6 /* AddNotice */,
 			);
 			path = ViewController;
@@ -104,7 +124,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		186EFDC220843B3E00EC84D6 /* Main */ = {
+		186EFDC220843B3E00EC84D6 /* NoticesList */ = {
 			isa = PBXGroup;
 			children = (
 				186EFDBF208437ED00EC84D6 /* NoticesListViewController.xib */,
@@ -112,7 +132,7 @@
 				186EFDCB2084608300EC84D6 /* NoticeTableViewCell.xib */,
 				186EFDCA2084608300EC84D6 /* NoticeTableViewCell.swift */,
 			);
-			path = Main;
+			path = NoticesList;
 			sourceTree = "<group>";
 		};
 		186EFDC320843BB600EC84D6 /* AddNotice */ = {
@@ -207,6 +227,8 @@
 				186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */,
 				186EFDC1208437ED00EC84D6 /* NoticesListViewController.xib in Resources */,
 				186EFDC720843BD200EC84D6 /* AddNoticeViewController.xib in Resources */,
+				183149262084A48B00E51BDA /* LoginViewController.xib in Resources */,
+				1831492A2084A5BF00E51BDA /* SignUpViewController.xib in Resources */,
 				186EFDCD2084608300EC84D6 /* NoticeTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183149252084A48B00E51BDA /* LoginViewController.swift in Sources */,
 				186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */,
+				183149292084A5BF00E51BDA /* SignUpViewController.swift in Sources */,
 				186EFDC620843BD200EC84D6 /* AddNoticeViewController.swift in Sources */,
 				186EFDC0208437ED00EC84D6 /* NoticesListViewController.swift in Sources */,
 				186EFDD1208468F900EC84D6 /* Notice.swift in Sources */,

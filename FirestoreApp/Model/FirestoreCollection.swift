@@ -3,6 +3,7 @@ import Foundation
 
 enum FirestoreCollection {
     case notices
+    case users
 }
 
 enum FirestoreDocument {
@@ -13,4 +14,5 @@ enum FirestoreDocument {
     case timestamp
     case username
     case documentId
+    case dateCreated
 }

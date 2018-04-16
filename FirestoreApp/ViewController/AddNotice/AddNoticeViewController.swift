@@ -38,8 +38,8 @@ class AddNoticeViewController: UIViewController {
 
 extension AddNoticeViewController {
     func setupButton() {
-        closeButton.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
-        postButton.addTarget(self, action: #selector(didTapPostButton), for: .touchUpInside)
+        closeButton.addTarget(self, action: #selector(didTapClose), for: .touchUpInside)
+        postButton.addTarget(self, action: #selector(didTapPost), for: .touchUpInside)
         postButton.layer.cornerRadius = 4
     }
     
@@ -54,11 +54,11 @@ extension AddNoticeViewController {
 }
 
 extension AddNoticeViewController {
-    @objc func didTapCloseButton(sender: UIButton) {
+    @objc func didTapClose(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
 
-    @objc func didTapPostButton(sender: UIButton) {
+    @objc func didTapPost(sender: UIButton) {
         guard let userName = userNameTextField.text else { return }
         
         Firestore.firestore()
