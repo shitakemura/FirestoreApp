@@ -48,7 +48,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS7-HQ-2VD">
-                    <rect key="frame" x="40" y="322" width="295" height="32"/>
+                    <rect key="frame" x="40" y="595" width="295" height="32"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="zEd-xJ-70K"/>
@@ -58,7 +58,7 @@
                     </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="アカウントをお持ちでない方" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qP-Ag-L0p">
-                    <rect key="frame" x="101" y="292" width="173" height="16"/>
+                    <rect key="frame" x="101" y="565" width="173" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -68,13 +68,13 @@
             <constraints>
                 <constraint firstItem="BsO-7h-Bcx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="03h-Qk-AcL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RS7-HQ-2VD" secondAttribute="trailing" constant="40" id="A7g-Ie-A9v"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RS7-HQ-2VD" secondAttribute="bottom" constant="40" id="AS5-zW-D9c"/>
                 <constraint firstItem="YvI-zh-2Sh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="JeQ-RN-4Ar"/>
                 <constraint firstItem="4qP-Ag-L0p" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LIy-SX-E5u"/>
                 <constraint firstItem="RS7-HQ-2VD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="OLu-60-VhA"/>
                 <constraint firstItem="RS7-HQ-2VD" firstAttribute="top" secondItem="4qP-Ag-L0p" secondAttribute="bottom" constant="14" id="SBg-SA-h3Y"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hPk-rt-7Ok" secondAttribute="trailing" constant="40" id="U2h-64-rBz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BsO-7h-Bcx" secondAttribute="trailing" constant="40" id="Uer-V2-zju"/>
-                <constraint firstItem="4qP-Ag-L0p" firstAttribute="top" secondItem="YvI-zh-2Sh" secondAttribute="bottom" constant="100" id="dJa-Ob-zKe"/>
                 <constraint firstItem="YvI-zh-2Sh" firstAttribute="top" secondItem="BsO-7h-Bcx" secondAttribute="bottom" constant="20" id="fOK-8S-Mfl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YvI-zh-2Sh" secondAttribute="trailing" constant="40" id="fUa-MI-5Fb"/>
                 <constraint firstItem="BsO-7h-Bcx" firstAttribute="top" secondItem="hPk-rt-7Ok" secondAttribute="bottom" constant="20" id="k9R-fk-82m"/>

@@ -25,6 +25,7 @@ class AddNoticeViewController: UIViewController {
     @IBOutlet private weak var postButton: UIButton!
     
     // Variables
+    private var activityIndicator: UIActivityIndicatorView!
     private var selectedCategory = AddNoticeCategory.tweet.name
     
     // LifeCycle
@@ -33,6 +34,7 @@ class AddNoticeViewController: UIViewController {
         setupButton()
         setupSegmentedControl()
         setupTextView()
+        setupActivityIndicator()
     }
 }
 
@@ -51,6 +53,12 @@ extension AddNoticeViewController {
         noticeTextView.text = "連絡事項を入力してください。"
         noticeTextView.delegate = self
     }
+    
+    func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+    }
 }
 
 extension AddNoticeViewController {
@@ -61,6 +69,7 @@ extension AddNoticeViewController {
     @objc func didTapPost(sender: UIButton) {
         guard let userName = userNameTextField.text else { return }
         
+        activityIndicator.startAnimating()
         Firestore.firestore()
             .collection(String(describing: FirestoreCollection.notices))
             .addDocument(data: [
@@ -71,6 +80,7 @@ extension AddNoticeViewController {
                 String(describing: FirestoreDocument.timestamp): FieldValue.serverTimestamp(),
                 String(describing: FirestoreDocument.username): userName,
             ]) { (error) in
+                self.activityIndicator.stopAnimating()
                 if let error = error {
                     debugPrint("Error adding document: \(error.localizedDescription)")
                 } else {
