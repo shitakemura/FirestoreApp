@@ -129,7 +129,8 @@ extension NoticesListViewController {
 
 extension NoticesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let commentsListViewController = CommentsListViewController(notice: notices[indexPath.row])
+        navigationController?.pushViewController(commentsListViewController, animated: true)
     }
 }
 

@@ -9,7 +9,9 @@ class NoticeTableViewCell: UITableViewCell {
     @IBOutlet private weak var noticeTextLabel: UILabel!
     @IBOutlet private weak var likesImageLabel: UILabel!
     @IBOutlet private weak var numLikesLabel: UILabel!
-
+    @IBOutlet private weak var commentsImageLabel: UILabel!
+    @IBOutlet private weak var numCommentsLabel: UILabel!
+    
     // Variables
     private var notice: Notice!
     
@@ -38,6 +40,7 @@ extension NoticeTableViewCell {
         
         noticeTextLabel.text = notice.noticeText
         numLikesLabel.text = notice.numLikes.description
+        numCommentsLabel.text = notice.numComments.description
     }
 }
 
