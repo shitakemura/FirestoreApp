@@ -15,4 +15,5 @@ enum FirestoreDocument {
     case username
     case documentId
     case dateCreated
+    case commentText
 }

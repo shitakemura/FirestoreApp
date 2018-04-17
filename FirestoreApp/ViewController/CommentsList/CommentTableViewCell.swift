@@ -10,6 +10,20 @@ class CommentTableViewCell: UITableViewCell {
     // LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+}
+
+extension CommentTableViewCell {
+    func configureCell(comment: Comment) {
+        selectionStyle = .none
         
+        userNameLabel.text = comment.userName
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, hh:mm"
+        let timestamp = formatter.string(from: comment.timeStamp)
+        timeStampLabel.text = timestamp
+        
+        commentTextLabel.text = comment.commentText
     }
 }

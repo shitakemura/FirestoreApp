@@ -15,6 +15,7 @@
 		1831E22C20859523004CC22E /* CommentsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831E22A20859523004CC22E /* CommentsListViewController.xib */; };
 		1831E22F208599ED004CC22E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E22D208599ED004CC22E /* CommentTableViewCell.swift */; };
 		1831E230208599ED004CC22E /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831E22E208599ED004CC22E /* CommentTableViewCell.xib */; };
+		183EB4932085F07D00749C88 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB4922085F07D00749C88 /* Comment.swift */; };
 		186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDA820842D5D00EC84D6 /* AppDelegate.swift */; };
 		186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDAF20842D5D00EC84D6 /* Assets.xcassets */; };
 		186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDB120842D5D00EC84D6 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 		1831E22A20859523004CC22E /* CommentsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsListViewController.xib; sourceTree = "<group>"; };
 		1831E22D208599ED004CC22E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1831E22E208599ED004CC22E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		183EB4922085F07D00749C88 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		186EFDA520842D5D00EC84D6 /* FirestoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186EFDA820842D5D00EC84D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		186EFDAF20842D5D00EC84D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				186EFDC820844ADC00EC84D6 /* FirestoreCollection.swift */,
 				186EFDD0208468F900EC84D6 /* Notice.swift */,
+				183EB4922085F07D00749C88 /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				186EFDCC2084608300EC84D6 /* NoticeTableViewCell.swift in Sources */,
 				1831E22F208599ED004CC22E /* CommentTableViewCell.swift in Sources */,
 				1831E22B20859523004CC22E /* CommentsListViewController.swift in Sources */,
+				183EB4932085F07D00749C88 /* Comment.swift in Sources */,
 				186EFDC920844ADC00EC84D6 /* FirestoreCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
