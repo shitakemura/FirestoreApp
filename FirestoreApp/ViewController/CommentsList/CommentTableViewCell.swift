@@ -13,6 +13,7 @@ class CommentTableViewCell: UITableViewCell {
     }
 }
 
+// Private method
 extension CommentTableViewCell {
     func configureCell(comment: Comment) {
         selectionStyle = .none

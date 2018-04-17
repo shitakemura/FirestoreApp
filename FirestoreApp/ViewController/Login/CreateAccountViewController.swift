@@ -17,7 +17,8 @@ class CreateAccountViewController: UIViewController {
     }
 }
 
-extension CreateAccountViewController {
+// Private method
+private extension CreateAccountViewController {
     func setupButton() {
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccount), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(didTapCancel), for: .touchUpInside)
@@ -26,7 +27,8 @@ extension CreateAccountViewController {
     }
 }
 
-extension CreateAccountViewController {
+// Action method
+private extension CreateAccountViewController {
     @objc func didTapCreateAccount(sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text, let userName = userNameTextField.text else { return }
         

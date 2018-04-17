@@ -11,16 +11,16 @@ class CommentsListViewController: UIViewController {
     // Variables
     private var notice: Notice!
     private var comments = [Comment]()
-    private let firestore = Firestore.firestore()
-    private var noticeRef: DocumentReference
+    private var documentReference: DocumentReference
     private var userName: String?
     
     // Initializer
     init(notice: Notice) {
         self.notice = notice
-        noticeRef = firestore
+        documentReference = Firestore.firestore()
             .collection(String(describing: FirestoreCollection.notices))
             .document(notice.documentId)
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -40,7 +40,8 @@ class CommentsListViewController: UIViewController {
     }
 }
 
-extension CommentsListViewController {
+// Private method
+private extension CommentsListViewController {
     func setupNavigation() {
         title = notice.noticeText
     }
@@ -50,7 +51,6 @@ extension CommentsListViewController {
     }
     
     func setupTableView() {
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 80
@@ -59,19 +59,17 @@ extension CommentsListViewController {
     }
 }
 
-extension CommentsListViewController {
+// Action method
+private extension CommentsListViewController {
     @objc func didTapAddComment(sender: UIButton) {
         guard let comment = addCommentTextField.text else { return }
         
-    }
-}
-
-extension CommentsListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         
     }
 }
 
+// UITableViewDataSource
 extension CommentsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count

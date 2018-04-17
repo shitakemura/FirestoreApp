@@ -20,7 +20,8 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController {
+// Private method
+private extension LoginViewController {
     func setupButton() {
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         createAccountButton.addTarget(self, action: #selector(didTapCreateAccount), for: .touchUpInside)
@@ -35,7 +36,8 @@ extension LoginViewController {
     }
 }
 
-extension LoginViewController {
+// Action method
+private extension LoginViewController {
     @objc func didTapLogin(sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
         

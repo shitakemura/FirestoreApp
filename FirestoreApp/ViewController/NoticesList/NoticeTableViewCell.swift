@@ -22,8 +22,9 @@ class NoticeTableViewCell: UITableViewCell {
     }
 }
 
+// Private method
 extension NoticeTableViewCell {
-    func setupLike() {
+    private func setupLike() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapLike))
         likesImageLabel.addGestureRecognizer(tap)
         likesImageLabel.isUserInteractionEnabled = true
@@ -44,7 +45,8 @@ extension NoticeTableViewCell {
     }
 }
 
-extension NoticeTableViewCell {
+// Action method
+private extension NoticeTableViewCell {
     @objc func didTapLike() {
         Firestore.firestore()
             .collection(String(describing: FirestoreCollection.notices))

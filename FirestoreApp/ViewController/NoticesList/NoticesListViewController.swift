@@ -25,10 +25,10 @@ class NoticesListViewController: UIViewController {
     
     // Variables
     private var notices = [Notice]()
-    private var noticesCollectionRef: CollectionReference!
-    private var noticesListener: ListenerRegistration!
+    private var collectionReference: CollectionReference!
+    private var listenerRegistration: ListenerRegistration!
     private var selectedCategory = NoticesListCategory.tweet.name
-    private var handle: AuthStateDidChangeListenerHandle?
+    private var listenerHandle: AuthStateDidChangeListenerHandle?
     
     // LifeCycle
     override func viewDidLoad() {
@@ -36,11 +36,12 @@ class NoticesListViewController: UIViewController {
         setupNavigation()
         setupSegmentedControl()
         setupTableView()
-        noticesCollectionRef = Firestore.firestore().collection(String(describing: FirestoreCollection.notices))
+        collectionReference = Firestore.firestore()
+            .collection(String(describing: FirestoreCollection.notices))
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+        listenerHandle = Auth.auth().addStateDidChangeListener({ (auth, user) in
             if user == nil {
                 let loginViewController = LoginViewController()
                 self.present(loginViewController, animated: true, completion: nil)
@@ -51,13 +52,14 @@ class NoticesListViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        if noticesListener != nil {
-            noticesListener.remove()
+        if listenerRegistration != nil {
+            listenerRegistration.remove()
         }
     }
 }
 
-extension NoticesListViewController {
+// Private method
+private extension NoticesListViewController {
     func setupNavigation() {
         title = "連絡帳"
         let logoutButton = UIBarButtonItem(title: "ログアウト", style: .plain, target: self, action: #selector(didTapLogout))
@@ -86,7 +88,7 @@ extension NoticesListViewController {
 //            
 //        }
         
-        noticesListener = noticesCollectionRef
+        listenerRegistration = collectionReference
             .whereField(String(describing: FirestoreDocument.category), isEqualTo: selectedCategory)
             .order(by: String(describing: FirestoreDocument.timestamp), descending: true)
             .addSnapshotListener { (snapshot, error) in
@@ -102,7 +104,8 @@ extension NoticesListViewController {
     }
 }
 
-extension NoticesListViewController {
+// Action method
+private extension NoticesListViewController {
     @objc func didTapLogout(sender: UIBarButtonItem) {
         let firebaseAuth = Auth.auth()
         do {
@@ -122,11 +125,12 @@ extension NoticesListViewController {
         guard let noticesListCategory = NoticesListCategory(rawValue: selectedIndex) else { return }
         selectedCategory = noticesListCategory.name
         
-        noticesListener.remove()
+        listenerRegistration.remove()
         setupListener()
     }
 }
 
+// UITableViewDelegate
 extension NoticesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let commentsListViewController = CommentsListViewController(notice: notices[indexPath.row])
@@ -134,6 +138,7 @@ extension NoticesListViewController: UITableViewDelegate {
     }
 }
 
+// UITableViewDataSource
 extension NoticesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notices.count

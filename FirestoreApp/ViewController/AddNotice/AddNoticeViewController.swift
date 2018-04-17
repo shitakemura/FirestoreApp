@@ -38,7 +38,8 @@ class AddNoticeViewController: UIViewController {
     }
 }
 
-extension AddNoticeViewController {
+// Private method
+private extension AddNoticeViewController {
     func setupButton() {
         closeButton.addTarget(self, action: #selector(didTapClose), for: .touchUpInside)
         postButton.addTarget(self, action: #selector(didTapPost), for: .touchUpInside)
@@ -61,7 +62,8 @@ extension AddNoticeViewController {
     }
 }
 
-extension AddNoticeViewController {
+// Action method
+private extension AddNoticeViewController {
     @objc func didTapClose(sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -96,6 +98,7 @@ extension AddNoticeViewController {
     }
 }
 
+// UITextViewDelegate
 extension AddNoticeViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         noticeTextView.text = ""
