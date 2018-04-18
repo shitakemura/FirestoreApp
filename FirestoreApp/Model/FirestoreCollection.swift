@@ -4,6 +4,7 @@ import Foundation
 enum FirestoreCollection {
     case notices
     case users
+    case comments
 }
 
 enum FirestoreDocument {

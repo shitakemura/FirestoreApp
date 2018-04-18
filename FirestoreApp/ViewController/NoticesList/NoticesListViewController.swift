@@ -46,7 +46,7 @@ class NoticesListViewController: UIViewController {
                 let loginViewController = LoginViewController()
                 self.present(loginViewController, animated: true, completion: nil)
             } else {
-                self.setupListener()
+                self.setupListenerRegistration()
             }
         })
     }
@@ -82,7 +82,7 @@ private extension NoticesListViewController {
         tableView.register(UINib(nibName: "NoticeTableViewCell", bundle: nil), forCellReuseIdentifier: "NoticeTableViewCell")
     }
 
-    func setupListener() {
+    func setupListenerRegistration() {
         
 //        if selectedCategory == String(describing: NoticesListCategory.favorite) {
 //            
@@ -126,7 +126,7 @@ private extension NoticesListViewController {
         selectedCategory = noticesListCategory.name
         
         listenerRegistration.remove()
-        setupListener()
+        setupListenerRegistration()
     }
 }
 

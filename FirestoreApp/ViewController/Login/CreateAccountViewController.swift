@@ -10,10 +10,14 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet private weak var createAccountButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
+    // Variables
+    private var activityIndicator: UIActivityIndicatorView!
+    
     // LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupButton()
+        setupActivityIndicator()
     }
 }
 
@@ -25,6 +29,12 @@ private extension CreateAccountViewController {
         createAccountButton.layer.cornerRadius = 4.0
         cancelButton.layer.cornerRadius = 4.0
     }
+    
+    func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        activityIndicator.center = view.center
+        view.addSubview(activityIndicator)
+    }
 }
 
 // Action method
@@ -32,16 +42,21 @@ private extension CreateAccountViewController {
     @objc func didTapCreateAccount(sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text, let userName = userNameTextField.text else { return }
         
+        activityIndicator.startAnimating()
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if let error = error {
+                self.activityIndicator.stopAnimating()
                 debugPrint("Error creating user: \(error.localizedDescription)")
+                return
             }
             
             let changeRequest = user?.createProfileChangeRequest()
             changeRequest?.displayName = userName
             changeRequest?.commitChanges(completion: { (error) in
                 if let error = error {
+                    self.activityIndicator.stopAnimating()
                     debugPrint(error.localizedDescription)
+                    return
                 }
             })
             
@@ -58,6 +73,7 @@ private extension CreateAccountViewController {
                     } else {
                         self.dismiss(animated: true, completion: nil)
                     }
+                    self.activityIndicator.stopAnimating()
                 })
         }
     }
