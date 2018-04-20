@@ -6,6 +6,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var timeStampLabel: UILabel!
     @IBOutlet private weak var commentTextLabel: UILabel!
+    @IBOutlet private weak var optionsMenuLabel: UILabel!
     
     // LifeCycle
     override func awakeFromNib() {

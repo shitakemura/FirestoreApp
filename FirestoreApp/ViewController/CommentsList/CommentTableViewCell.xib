@@ -47,16 +47,25 @@
                             </label>
                         </subviews>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●●●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzV-rR-4yR">
+                        <rect key="frame" x="293" y="20" width="32" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="ldV-Yd-H97" secondAttribute="bottom" constant="20" id="PPX-No-z1g"/>
+                    <constraint firstItem="yzV-rR-4yR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="bhi-Bf-5ng"/>
                     <constraint firstItem="ldV-Yd-H97" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="dag-Yc-G1H"/>
                     <constraint firstItem="ldV-Yd-H97" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="gEw-Rz-cb6"/>
+                    <constraint firstAttribute="trailing" secondItem="yzV-rR-4yR" secondAttribute="trailing" constant="10" id="vhs-jS-mIi"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="commentTextLabel" destination="3jq-jr-GSB" id="QXo-KG-ykD"/>
+                <outlet property="optionsMenuLabel" destination="yzV-rR-4yR" id="weH-id-WUG"/>
                 <outlet property="timeStampLabel" destination="eBO-WS-01q" id="KX9-0W-6DR"/>
                 <outlet property="userNameLabel" destination="nwW-ck-L78" id="7me-9s-QyJ"/>
             </connections>

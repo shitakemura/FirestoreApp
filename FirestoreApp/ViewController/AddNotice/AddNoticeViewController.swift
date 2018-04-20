@@ -81,6 +81,7 @@ private extension AddNoticeViewController {
                 String(describing: FirestoreDocument.noticeText): noticeTextView.text,
                 String(describing: FirestoreDocument.timestamp): FieldValue.serverTimestamp(),
                 String(describing: FirestoreDocument.username): userName,
+                String(describing: FirestoreDocument.userId): Auth.auth().currentUser?.uid ?? ""
             ]) { (error) in
                 self.activityIndicator.stopAnimating()
                 if let error = error {

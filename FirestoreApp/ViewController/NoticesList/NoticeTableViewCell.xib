@@ -95,9 +95,9 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●●●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-nk-XkD">
-                        <rect key="frame" x="321" y="10" width="44" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="333" y="10" width="32" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -105,7 +105,7 @@
                     <constraint firstItem="cI6-7y-uCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="93U-bq-Eeo"/>
                     <constraint firstItem="cI6-7y-uCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ffj-FD-TL8"/>
                     <constraint firstAttribute="trailing" secondItem="Eo6-nk-XkD" secondAttribute="trailing" constant="10" id="JNp-z6-gyO"/>
-                    <constraint firstItem="Eo6-nk-XkD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RXZ-ov-4Ek"/>
+                    <constraint firstItem="Eo6-nk-XkD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aKe-8b-buE"/>
                     <constraint firstAttribute="bottom" secondItem="cI6-7y-uCc" secondAttribute="bottom" constant="10" id="yEa-gH-oAs"/>
                 </constraints>
             </tableViewCellContentView>
@@ -116,6 +116,7 @@
                 <outlet property="noticeTextLabel" destination="C2g-CH-Msk" id="qZi-cu-AlX"/>
                 <outlet property="numCommentsLabel" destination="CGQ-q8-fb8" id="VZY-Gf-Yl8"/>
                 <outlet property="numLikesLabel" destination="0DY-nv-PZs" id="19I-ps-ef2"/>
+                <outlet property="optionsMenuLabel" destination="Eo6-nk-XkD" id="GGo-Br-0u4"/>
                 <outlet property="timeStampLabel" destination="hKF-Gv-AcF" id="w9V-cO-O64"/>
                 <outlet property="userNameLabel" destination="qXA-iY-iq5" id="dcQ-Gf-jw3"/>
             </connections>

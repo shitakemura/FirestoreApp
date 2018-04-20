@@ -11,6 +11,7 @@ class NoticeTableViewCell: UITableViewCell {
     @IBOutlet private weak var numLikesLabel: UILabel!
     @IBOutlet private weak var commentsImageLabel: UILabel!
     @IBOutlet private weak var numCommentsLabel: UILabel!
+    @IBOutlet private weak var optionsMenuLabel: UILabel!
     
     // Variables
     private var notice: Notice!

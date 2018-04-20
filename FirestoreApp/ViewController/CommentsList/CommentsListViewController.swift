@@ -123,7 +123,8 @@ private extension CommentsListViewController {
             transaction.setData([
                 String(describing: FirestoreDocument.commentText) : commentText,
                 String(describing: FirestoreDocument.timestamp): FieldValue.serverTimestamp(),
-                String(describing: FirestoreDocument.username): self.userName?.description ?? ""
+                String(describing: FirestoreDocument.username): self.userName?.description ?? "",
+                String(describing: FirestoreDocument.userId): Auth.auth().currentUser?.uid ?? ""
                 ], forDocument: addCommentReference)
             
             return nil
