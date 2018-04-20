@@ -9,14 +9,16 @@ class Notice {
     private(set) var numLikes: Int
     private(set) var numComments: Int
     private(set) var documentId: String
+    private(set) var userId: String
     
-    init(userName: String, timeStamp: Date, noticeText: String, numLikes: Int, numComments: Int, documentId: String) {
+    init(userName: String, timeStamp: Date, noticeText: String, numLikes: Int, numComments: Int, documentId: String, userId: String) {
         self.userName = userName
         self.timeStamp = timeStamp
         self.noticeText = noticeText
         self.numLikes = numLikes
         self.numComments = numComments
         self.documentId = documentId
+        self.userId = userId
     }
     
     static func parse(snapshot: QuerySnapshot) -> [Notice] {
@@ -27,8 +29,9 @@ class Notice {
             let numLikes = document[String(describing: FirestoreDocument.numLikes)] as? Int ?? 0
             let numComments = document[String(describing: FirestoreDocument.numComments)] as? Int ?? 0
             let documentId = document.documentID
+            let userId = document[String(String(describing: FirestoreDocument.userId))] as? String ?? ""
 
-            return Notice(userName: userName, timeStamp: timeStamp, noticeText: noticeText, numLikes: numLikes, numComments: numComments, documentId: documentId)
+            return Notice(userName: userName, timeStamp: timeStamp, noticeText: noticeText, numLikes: numLikes, numComments: numComments, documentId: documentId, userId: userId)
         }
         return notices
     }

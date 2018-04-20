@@ -94,10 +94,18 @@
                             </stackView>
                         </subviews>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●●●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-nk-XkD">
+                        <rect key="frame" x="321" y="10" width="44" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="cI6-7y-uCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="93U-bq-Eeo"/>
                     <constraint firstItem="cI6-7y-uCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ffj-FD-TL8"/>
+                    <constraint firstAttribute="trailing" secondItem="Eo6-nk-XkD" secondAttribute="trailing" constant="10" id="JNp-z6-gyO"/>
+                    <constraint firstItem="Eo6-nk-XkD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="RXZ-ov-4Ek"/>
                     <constraint firstAttribute="bottom" secondItem="cI6-7y-uCc" secondAttribute="bottom" constant="10" id="yEa-gH-oAs"/>
                 </constraints>
             </tableViewCellContentView>
