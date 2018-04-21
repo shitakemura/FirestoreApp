@@ -20,7 +20,7 @@ class CommentsListViewController: UIViewController {
     init(notice: Notice) {
         self.notice = notice
         documentReference = Firestore.firestore()
-            .collection(String(describing: FirestoreCollection.notices))
+            .collection(FirestoreCollection.notices.key)
             .document(notice.documentId)
         
         super.init(nibName: nil, bundle: nil)
@@ -79,8 +79,8 @@ private extension CommentsListViewController {
     
     func setupListenerRegistration() {
         listenerRegistration = documentReference
-            .collection(String(describing: FirestoreCollection.comments))
-            .order(by: String(describing: FirestoreDocument.timestamp), descending: false)
+            .collection(FirestoreCollection.comments.key)
+            .order(by: FirestoreDocument.timestamp.key, descending: false)
             .addSnapshotListener({ (snapshot, error) in
             
             guard let snapshot = snapshot else {
@@ -114,17 +114,17 @@ private extension CommentsListViewController {
                 return nil
             }
             
-            guard let numComments = selectedNoticeDocument.data()[String(describing: FirestoreDocument.numComments)] as? Int else { return nil }
+            guard let numComments = selectedNoticeDocument.data()[FirestoreDocument.numComments.key] as? Int else { return nil }
             
-            transaction.updateData([String(describing: FirestoreDocument.numComments) : numComments + 1], forDocument: self.documentReference)
+            transaction.updateData([FirestoreDocument.numComments.key : numComments + 1], forDocument: self.documentReference)
             
-            let addCommentReference = self.documentReference.collection(String(describing: FirestoreCollection.comments)).document()
+            let addCommentReference = self.documentReference.collection(FirestoreCollection.comments.key).document()
             
             transaction.setData([
-                String(describing: FirestoreDocument.commentText) : commentText,
-                String(describing: FirestoreDocument.timestamp): FieldValue.serverTimestamp(),
-                String(describing: FirestoreDocument.username): self.userName?.description ?? "",
-                String(describing: FirestoreDocument.userId): Auth.auth().currentUser?.uid ?? ""
+                FirestoreDocument.commentText.key : commentText,
+                FirestoreDocument.timestamp.key: FieldValue.serverTimestamp(),
+                FirestoreDocument.username.key: self.userName?.description ?? "",
+                FirestoreDocument.userId.key: Auth.auth().currentUser?.uid ?? ""
                 ], forDocument: addCommentReference)
             
             return nil

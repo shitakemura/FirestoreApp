@@ -19,11 +19,11 @@ class Comment {
     
     static func parse(snapshot: QuerySnapshot) -> [Comment] {
         let comments = snapshot.documents.map { comment -> Comment in
-            let userName = comment[String(describing: FirestoreDocument.username)] as? String ?? ""
-            let timeStamp = comment[String(describing: FirestoreDocument.timestamp)] as? Date ?? Date()
-            let commentText = comment[String(describing: FirestoreDocument.commentText)] as? String ?? ""
+            let userName = comment[FirestoreDocument.username.key] as? String ?? ""
+            let timeStamp = comment[FirestoreDocument.timestamp.key] as? Date ?? Date()
+            let commentText = comment[FirestoreDocument.commentText.key] as? String ?? ""
             let documentId = comment.documentID
-            let userId = comment[String(describing: FirestoreDocument.userId)] as? String ?? ""
+            let userId = comment[FirestoreDocument.userId.key] as? String ?? ""
 
             return Comment(userName: userName, timeStamp: timeStamp, commentText: commentText, documentId: documentId, userId: userId)
         }

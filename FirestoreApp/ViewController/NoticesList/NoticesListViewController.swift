@@ -37,7 +37,7 @@ class NoticesListViewController: UIViewController {
         setupSegmentedControl()
         setupTableView()
         collectionReference = Firestore.firestore()
-            .collection(String(describing: FirestoreCollection.notices))
+            .collection(FirestoreCollection.notices.key)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,8 +89,8 @@ private extension NoticesListViewController {
 //        }
         
         listenerRegistration = collectionReference
-            .whereField(String(describing: FirestoreDocument.category), isEqualTo: selectedCategory)
-            .order(by: String(describing: FirestoreDocument.timestamp), descending: true)
+            .whereField(FirestoreDocument.category.key, isEqualTo: selectedCategory)
+            .order(by: FirestoreDocument.timestamp.key, descending: true)
             .addSnapshotListener { (snapshot, error) in
                 if let error = error {
                     debugPrint("Error fetching docs: \(error.localizedDescription)")

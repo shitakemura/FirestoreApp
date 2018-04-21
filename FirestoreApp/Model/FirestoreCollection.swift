@@ -5,6 +5,10 @@ enum FirestoreCollection {
     case notices
     case users
     case comments
+    
+    var key: String {
+        return String(describing: self)
+    }
 }
 
 enum FirestoreDocument {
@@ -18,4 +22,8 @@ enum FirestoreDocument {
     case documentId
     case dateCreated
     case commentText
+    
+    var key: String {
+        return String(describing: self)
+    }
 }

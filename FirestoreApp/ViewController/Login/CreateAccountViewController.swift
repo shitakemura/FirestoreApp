@@ -62,11 +62,11 @@ private extension CreateAccountViewController {
             
             guard let userId = user?.uid else { return }
             Firestore.firestore()
-                .collection(String(describing: FirestoreCollection.users))
+                .collection(FirestoreCollection.users.key)
                 .document(userId)
                 .setData([
-                    String(describing: FirestoreDocument.username): userName,
-                    String(describing: FirestoreDocument.dateCreated): FieldValue.serverTimestamp()
+                    FirestoreDocument.username.key: userName,
+                    FirestoreDocument.dateCreated.key: FieldValue.serverTimestamp()
                 ], completion: { (error) in
                     if let error = error {
                         debugPrint(error.localizedDescription)

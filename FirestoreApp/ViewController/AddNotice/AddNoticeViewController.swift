@@ -73,15 +73,15 @@ private extension AddNoticeViewController {
         
         activityIndicator.startAnimating()
         Firestore.firestore()
-            .collection(String(describing: FirestoreCollection.notices))
+            .collection(FirestoreCollection.notices.key)
             .addDocument(data: [
-                String(describing: FirestoreDocument.category): selectedCategory,
-                String(describing: FirestoreDocument.numComments): 0,
-                String(describing: FirestoreDocument.numLikes): 0,
-                String(describing: FirestoreDocument.noticeText): noticeTextView.text,
-                String(describing: FirestoreDocument.timestamp): FieldValue.serverTimestamp(),
-                String(describing: FirestoreDocument.username): userName,
-                String(describing: FirestoreDocument.userId): Auth.auth().currentUser?.uid ?? ""
+                FirestoreDocument.category.key: selectedCategory,
+                FirestoreDocument.numComments.key: 0,
+                FirestoreDocument.numLikes.key: 0,
+                FirestoreDocument.noticeText.key: noticeTextView.text,
+                FirestoreDocument.timestamp.key: FieldValue.serverTimestamp(),
+                FirestoreDocument.username.key: userName,
+                FirestoreDocument.userId.key: Auth.auth().currentUser?.uid ?? ""
             ]) { (error) in
                 self.activityIndicator.stopAnimating()
                 if let error = error {

@@ -50,8 +50,8 @@ extension NoticeTableViewCell {
 private extension NoticeTableViewCell {
     @objc func didTapLike() {
         Firestore.firestore()
-            .collection(String(describing: FirestoreCollection.notices))
+            .collection(FirestoreCollection.notices.key)
             .document(notice.documentId)
-            .setData([String(describing: FirestoreDocument.numLikes): notice.numLikes + 1], options: SetOptions.merge())
+            .setData([FirestoreDocument.numLikes.key: notice.numLikes + 1], options: SetOptions.merge())
     }
 }

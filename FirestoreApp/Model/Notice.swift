@@ -23,13 +23,13 @@ class Notice {
     
     static func parse(snapshot: QuerySnapshot) -> [Notice] {
         let notices = snapshot.documents.map { document -> Notice in
-            let userName = document[String(describing: FirestoreDocument.username)] as? String ?? ""
-            let timeStamp = document[String(describing: FirestoreDocument.timestamp)] as? Date ?? Date()
-            let noticeText = document[String(describing: FirestoreDocument.noticeText)] as? String ?? ""
-            let numLikes = document[String(describing: FirestoreDocument.numLikes)] as? Int ?? 0
-            let numComments = document[String(describing: FirestoreDocument.numComments)] as? Int ?? 0
+            let userName = document[FirestoreDocument.username.key] as? String ?? ""
+            let timeStamp = document[FirestoreDocument.timestamp.key] as? Date ?? Date()
+            let noticeText = document[FirestoreDocument.noticeText.key] as? String ?? ""
+            let numLikes = document[FirestoreDocument.numLikes.key] as? Int ?? 0
+            let numComments = document[FirestoreDocument.numComments.key] as? Int ?? 0
             let documentId = document.documentID
-            let userId = document[String(String(describing: FirestoreDocument.userId))] as? String ?? ""
+            let userId = document[FirestoreDocument.userId.key] as? String ?? ""
 
             return Notice(userName: userName, timeStamp: timeStamp, noticeText: noticeText, numLikes: numLikes, numComments: numComments, documentId: documentId, userId: userId)
         }
