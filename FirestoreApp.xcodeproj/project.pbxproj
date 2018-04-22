@@ -15,6 +15,8 @@
 		1831E22C20859523004CC22E /* CommentsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831E22A20859523004CC22E /* CommentsListViewController.xib */; };
 		1831E22F208599ED004CC22E /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831E22D208599ED004CC22E /* CommentTableViewCell.swift */; };
 		1831E230208599ED004CC22E /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1831E22E208599ED004CC22E /* CommentTableViewCell.xib */; };
+		183240FF208C61610026E251 /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183240FD208C61610026E251 /* EditCommentViewController.swift */; };
+		18324100208C61610026E251 /* EditCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183240FE208C61610026E251 /* EditCommentViewController.xib */; };
 		183EB4932085F07D00749C88 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183EB4922085F07D00749C88 /* Comment.swift */; };
 		186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186EFDA820842D5D00EC84D6 /* AppDelegate.swift */; };
 		186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186EFDAF20842D5D00EC84D6 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		1831E22A20859523004CC22E /* CommentsListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsListViewController.xib; sourceTree = "<group>"; };
 		1831E22D208599ED004CC22E /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		1831E22E208599ED004CC22E /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		183240FD208C61610026E251 /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
+		183240FE208C61610026E251 /* EditCommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCommentViewController.xib; sourceTree = "<group>"; };
 		183EB4922085F07D00749C88 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		186EFDA520842D5D00EC84D6 /* FirestoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirestoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186EFDA820842D5D00EC84D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +85,15 @@
 				1831E22D208599ED004CC22E /* CommentTableViewCell.swift */,
 			);
 			path = CommentsList;
+			sourceTree = "<group>";
+		};
+		183240FC208C61380026E251 /* EditComment */ = {
+			isa = PBXGroup;
+			children = (
+				183240FE208C61610026E251 /* EditCommentViewController.xib */,
+				183240FD208C61610026E251 /* EditCommentViewController.swift */,
+			);
+			path = EditComment;
 			sourceTree = "<group>";
 		};
 		1848DF6B2084A0CE00E34BD3 /* Login */ = {
@@ -133,6 +146,7 @@
 				186EFDC220843B3E00EC84D6 /* NoticesList */,
 				186EFDC320843BB600EC84D6 /* AddNotice */,
 				1831E2282085950A004CC22E /* CommentsList */,
+				183240FC208C61380026E251 /* EditComment */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -245,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18324100208C61610026E251 /* EditCommentViewController.xib in Resources */,
 				186EFDB320842D5D00EC84D6 /* LaunchScreen.storyboard in Resources */,
 				186EFDBB20842F4700EC84D6 /* GoogleService-Info.plist in Resources */,
 				186EFDB020842D5D00EC84D6 /* Assets.xcassets in Resources */,
@@ -339,6 +354,7 @@
 			files = (
 				183149252084A48B00E51BDA /* LoginViewController.swift in Sources */,
 				186EFDA920842D5D00EC84D6 /* AppDelegate.swift in Sources */,
+				183240FF208C61610026E251 /* EditCommentViewController.swift in Sources */,
 				183149292084A5BF00E51BDA /* CreateAccountViewController.swift in Sources */,
 				186EFDC620843BD200EC84D6 /* AddNoticeViewController.swift in Sources */,
 				186EFDC0208437ED00EC84D6 /* NoticesListViewController.swift in Sources */,

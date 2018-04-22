@@ -207,11 +207,14 @@ extension CommentsListViewController: CommentTableViewCellDelegate {
                     actionSheet.dismiss(animated: true, completion: nil)
                 }
             }
-            
         }
+        
         let editAction = UIAlertAction(title: "編集", style: .default) { (action) in
-            
+            let editCommentViewController = EditCommentViewController(notice: self.notice, comment: comment)
+            actionSheet.dismiss(animated: true, completion: nil)
+            self.navigationController?.pushViewController(editCommentViewController, animated: true)
         }
+        
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         actionSheet.addAction(deleteAction)
         actionSheet.addAction(editAction)
