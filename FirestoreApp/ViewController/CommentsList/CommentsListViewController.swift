@@ -161,19 +161,6 @@ extension CommentsListViewController: CommentTableViewCellDelegate {
         let actionSheet = UIAlertController(title: "コメント", message: "削除・編集しますか？", preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "削除", style: .default) { (action) in
             
-//            Firestore.firestore().collection(FirestoreCollection.notices.key)
-//                .document(self.notice.documentId)
-//                .collection(FirestoreCollection.comments.key)
-//                .document(comment.documentId)
-//                .delete(completion: { (error) in
-//
-//                    if let error = error {
-//                        debugPrint("Unable to delete comment: \(error)")
-//                    } else {
-//                        actionSheet.dismiss(animated: true, completion: nil)
-//                    }
-//                })
-            
             Firestore.firestore().runTransaction({ (transaction, errorPointer) -> Any? in
                 
                 let selectedNoticeDocument: DocumentSnapshot

@@ -20,7 +20,6 @@ class AddNoticeViewController: UIViewController {
     // Outlets
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!
-    @IBOutlet private weak var userNameTextField: UITextField!
     @IBOutlet private weak var noticeTextView: UITextView!
     @IBOutlet private weak var postButton: UIButton!
     
@@ -69,7 +68,6 @@ private extension AddNoticeViewController {
     }
 
     @objc func didTapPost(sender: UIButton) {
-        guard let userName = userNameTextField.text else { return }
         
         activityIndicator.startAnimating()
         Firestore.firestore()
@@ -80,7 +78,7 @@ private extension AddNoticeViewController {
                 FirestoreDocument.numLikes.key: 0,
                 FirestoreDocument.noticeText.key: noticeTextView.text,
                 FirestoreDocument.timestamp.key: FieldValue.serverTimestamp(),
-                FirestoreDocument.username.key: userName,
+                FirestoreDocument.username.key: Auth.auth().currentUser?.displayName ?? "",
                 FirestoreDocument.userId.key: Auth.auth().currentUser?.uid ?? ""
             ]) { (error) in
                 self.activityIndicator.stopAnimating()

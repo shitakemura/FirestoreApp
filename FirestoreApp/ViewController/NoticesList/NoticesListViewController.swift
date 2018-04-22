@@ -156,7 +156,26 @@ extension NoticesListViewController: UITableViewDataSource {
 // NoticeTableViewCellDelegate
 extension NoticesListViewController: NoticeTableViewCellDelegate {
     func didTapOptionsMenu(of notice: Notice) {
-        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "連絡事項", message: "削除しますか？", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "削除", style: .default) { (action) in
+                    
+            // TODO: - delete subcollection(comment)
+            
+            Firestore.firestore()
+                .collection(FirestoreCollection.notices.key)
+                .document(notice.documentId)
+                .delete(completion: { (error) in
+                    if let error = error {
+                        debugPrint("unable to delete notice: \(error.localizedDescription)")
+                    } else {
+                        actionSheet.dismiss(animated: true, completion: nil)
+                    }
+                })
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        actionSheet.addAction(deleteAction)
+        actionSheet.addAction(cancelAction)
+        present(actionSheet, animated: true, completion: nil)
     }
 }
 

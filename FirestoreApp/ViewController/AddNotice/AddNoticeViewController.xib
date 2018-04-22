@@ -16,7 +16,6 @@
                 <outlet property="closeButton" destination="ONO-4M-a6V" id="4Tj-xM-nfN"/>
                 <outlet property="noticeTextView" destination="ap9-JT-lcG" id="cDG-Ou-6jJ"/>
                 <outlet property="postButton" destination="mQD-B6-X2c" id="vwa-22-trg"/>
-                <outlet property="userNameTextField" destination="qrt-gV-fHC" id="0Kh-Gb-KXD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,14 +35,8 @@
                         <segment title="お願い"/>
                     </segments>
                 </segmentedControl>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名前" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qrt-gV-fHC">
-                    <rect key="frame" x="20" y="152" width="335" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
-                </textField>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ap9-JT-lcG">
-                    <rect key="frame" x="20" y="194" width="335" height="60"/>
+                    <rect key="frame" x="20" y="152" width="335" height="60"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="0.1462970890410959" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="bmP-Bm-lzP"/>
@@ -52,7 +45,7 @@
                     <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQD-B6-X2c">
-                    <rect key="frame" x="20" y="274" width="335" height="32"/>
+                    <rect key="frame" x="20" y="232" width="335" height="32"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="uoa-Ce-Nab"/>
@@ -72,19 +65,16 @@
             <constraints>
                 <constraint firstItem="VjS-AA-MtU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="0EX-Sk-mFb"/>
                 <constraint firstItem="VjS-AA-MtU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="14H-Rd-Pvb"/>
-                <constraint firstItem="qrt-gV-fHC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Fsv-Tm-IZd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ONO-4M-a6V" secondAttribute="trailing" constant="20" id="Gpo-yT-amz"/>
-                <constraint firstItem="qrt-gV-fHC" firstAttribute="top" secondItem="VjS-AA-MtU" secondAttribute="bottom" constant="20" id="Lys-0W-9cl"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mQD-B6-X2c" secondAttribute="trailing" constant="20" id="OpP-ZN-0HT"/>
                 <constraint firstItem="ONO-4M-a6V" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="aah-OR-JBq"/>
                 <constraint firstItem="mQD-B6-X2c" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="as2-GS-cB3"/>
                 <constraint firstItem="ap9-JT-lcG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="dLc-Jl-Y4m"/>
                 <constraint firstItem="mQD-B6-X2c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="f96-Wp-hBM"/>
-                <constraint firstItem="ap9-JT-lcG" firstAttribute="top" secondItem="qrt-gV-fHC" secondAttribute="bottom" constant="12" id="fxU-7L-26X"/>
+                <constraint firstItem="ap9-JT-lcG" firstAttribute="top" secondItem="VjS-AA-MtU" secondAttribute="bottom" constant="20" id="fUl-PT-rQL"/>
                 <constraint firstItem="VjS-AA-MtU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="80" id="i3y-6d-EwQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ap9-JT-lcG" secondAttribute="trailing" constant="20" id="jgw-oJ-P5d"/>
                 <constraint firstItem="mQD-B6-X2c" firstAttribute="top" secondItem="ap9-JT-lcG" secondAttribute="bottom" constant="20" id="wIr-xD-zSM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qrt-gV-fHC" secondAttribute="trailing" constant="20" id="wNS-2R-pkt"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VjS-AA-MtU" secondAttribute="trailing" constant="20" id="zMl-Qb-Twl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
