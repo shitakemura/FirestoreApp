@@ -158,6 +158,64 @@ extension CommentsListViewController: UITableViewDataSource {
 // CommentTableViewCellDelegate
 extension CommentsListViewController: CommentTableViewCellDelegate {
     func didTapOptionsMenu(of comment: Comment) {
-        
+        let actionSheet = UIAlertController(title: "コメント", message: "削除・編集しますか？", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "削除", style: .default) { (action) in
+            
+//            Firestore.firestore().collection(FirestoreCollection.notices.key)
+//                .document(self.notice.documentId)
+//                .collection(FirestoreCollection.comments.key)
+//                .document(comment.documentId)
+//                .delete(completion: { (error) in
+//
+//                    if let error = error {
+//                        debugPrint("Unable to delete comment: \(error)")
+//                    } else {
+//                        actionSheet.dismiss(animated: true, completion: nil)
+//                    }
+//                })
+            
+            Firestore.firestore().runTransaction({ (transaction, errorPointer) -> Any? in
+                
+                let selectedNoticeDocument: DocumentSnapshot
+                
+                do {
+                    try selectedNoticeDocument = transaction.getDocument(self.documentReference)
+                    
+                } catch let error as NSError {
+                    self.activityIndicator.stopAnimating()
+                    debugPrint("Fetch error: \(error.localizedDescription)")
+                    return nil
+                }
+                
+                guard let numComments = selectedNoticeDocument.data()[FirestoreDocument.numComments.key] as? Int else { return nil }
+                
+                transaction.updateData([FirestoreDocument.numComments.key : numComments - 1], forDocument: self.documentReference)
+                
+                let commentReference = Firestore.firestore()
+                                        .collection(FirestoreCollection.notices.key)
+                                        .document(self.notice.documentId)
+                                        .collection(FirestoreCollection.comments.key)
+                                        .document(comment.documentId)
+                
+                transaction.deleteDocument(commentReference)
+                return nil
+                
+            }) { (object, error) in
+                if let error = error {
+                    debugPrint("Transaction failed: \(error.localizedDescription)")
+                } else {
+                    actionSheet.dismiss(animated: true, completion: nil)
+                }
+            }
+            
+        }
+        let editAction = UIAlertAction(title: "編集", style: .default) { (action) in
+            
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
+        actionSheet.addAction(deleteAction)
+        actionSheet.addAction(editAction)
+        actionSheet.addAction(cancelAction)
+        present(actionSheet, animated: true, completion: nil)
     }
 }
