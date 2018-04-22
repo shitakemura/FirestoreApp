@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="cI6-7y-uCc">
-                        <rect key="frame" x="10" y="10" width="168.5" height="79.5"/>
+                        <rect key="frame" x="20" y="10" width="168.5" height="79.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="YQO-x1-Jdh">
                                 <rect key="frame" x="0.0" y="0.0" width="168.5" height="21.5"/>
@@ -95,7 +95,7 @@
                         </subviews>
                     </stackView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="●●●" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eo6-nk-XkD">
-                        <rect key="frame" x="333" y="10" width="32" height="14.5"/>
+                        <rect key="frame" x="323" y="10" width="32" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -103,8 +103,8 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="cI6-7y-uCc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="93U-bq-Eeo"/>
-                    <constraint firstItem="cI6-7y-uCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ffj-FD-TL8"/>
-                    <constraint firstAttribute="trailing" secondItem="Eo6-nk-XkD" secondAttribute="trailing" constant="10" id="JNp-z6-gyO"/>
+                    <constraint firstItem="cI6-7y-uCc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Ffj-FD-TL8"/>
+                    <constraint firstAttribute="trailing" secondItem="Eo6-nk-XkD" secondAttribute="trailing" constant="20" id="JNp-z6-gyO"/>
                     <constraint firstItem="Eo6-nk-XkD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aKe-8b-buE"/>
                     <constraint firstAttribute="bottom" secondItem="cI6-7y-uCc" secondAttribute="bottom" constant="10" id="yEa-gH-oAs"/>
                 </constraints>

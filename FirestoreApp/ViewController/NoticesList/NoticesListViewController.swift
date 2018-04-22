@@ -148,7 +148,15 @@ extension NoticesListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoticeTableViewCell", for: indexPath) as? NoticeTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(notice: notices[indexPath.row])
+        cell.configureCell(notice: notices[indexPath.row], delegate: self)
         return cell
     }
 }
+
+// NoticeTableViewCellDelegate
+extension NoticesListViewController: NoticeTableViewCellDelegate {
+    func didTapOptionsMenu(of notice: Notice) {
+        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+    }
+}
+

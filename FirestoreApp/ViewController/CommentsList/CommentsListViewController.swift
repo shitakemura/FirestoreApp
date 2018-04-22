@@ -150,7 +150,14 @@ extension CommentsListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommentTableViewCell", for: indexPath) as? CommentTableViewCell else {
             return UITableViewCell()
         }
-        cell.configureCell(comment: comments[indexPath.row])
+        cell.configureCell(comment: comments[indexPath.row], delegate: self)
         return cell
+    }
+}
+
+// CommentTableViewCellDelegate
+extension CommentsListViewController: CommentTableViewCellDelegate {
+    func didTapOptionsMenu(of comment: Comment) {
+        
     }
 }
