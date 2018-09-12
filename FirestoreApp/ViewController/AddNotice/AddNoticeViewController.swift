@@ -1,4 +1,3 @@
-
 import UIKit
 import Firebase
 
@@ -16,7 +15,7 @@ enum AddNoticeCategory: Int {
     }
 }
 
-class AddNoticeViewController: UIViewController {
+final class AddNoticeViewController: UIViewController {
     // Outlets
     @IBOutlet private weak var closeButton: UIButton!
     @IBOutlet private weak var categorySegmentedControl: UISegmentedControl!

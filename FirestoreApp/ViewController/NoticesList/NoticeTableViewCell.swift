@@ -1,13 +1,11 @@
-
 import UIKit
 import Firebase
-
 
 protocol NoticeTableViewCellDelegate: class {
     func didTapOptionsMenu(of notice: Notice)
 }
 
-class NoticeTableViewCell: UITableViewCell {
+final class NoticeTableViewCell: UITableViewCell {
     // Outlets
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var timeStampLabel: UILabel!

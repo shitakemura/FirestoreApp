@@ -2,7 +2,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     // Outlets
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -10,7 +10,7 @@ class LoginViewController: UIViewController {
     @IBOutlet private weak var createAccountButton: UIButton!
     
     // Variables
-    private var activityIndicator: UIActivityIndicatorView!
+    private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     // LifeCycle
     override func viewDidLoad() {
@@ -30,7 +30,6 @@ private extension LoginViewController {
     }
     
     func setupActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.center = view.center
         view.addSubview(activityIndicator)
     }

@@ -1,15 +1,14 @@
-
 import UIKit
 import Firebase
 
-class EditCommentViewController: UIViewController {
+final class EditCommentViewController: UIViewController {
     // Outlets
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var updateButton: UIButton!
     
     // Variables
-    private var notice: Notice
-    private var comment: Comment
+    private let notice: Notice
+    private let comment: Comment
     
     init(notice: Notice, comment: Comment) {
         self.notice = notice

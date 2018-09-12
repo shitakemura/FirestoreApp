@@ -2,7 +2,7 @@
 import UIKit
 import Firebase
 
-class CreateAccountViewController: UIViewController {
+final class CreateAccountViewController: UIViewController {
     // Outlets
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
@@ -11,7 +11,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     // Variables
-    private var activityIndicator: UIActivityIndicatorView!
+    private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     
     // LifeCycle
     override func viewDidLoad() {
@@ -31,7 +31,6 @@ private extension CreateAccountViewController {
     }
     
     func setupActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.center = view.center
         view.addSubview(activityIndicator)
     }

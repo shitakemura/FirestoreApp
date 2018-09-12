@@ -1,15 +1,14 @@
-
 import UIKit
 import Firebase
 
-class CommentsListViewController: UIViewController {
+final class CommentsListViewController: UIViewController {
     // Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addCommentTextField: UITextField!
     @IBOutlet weak var addCommentButton: UIButton!
     
     // Variables
-    private var notice: Notice!
+    private let notice: Notice
     private var comments = [Comment]()
     private var documentReference: DocumentReference
     private var userName: String?

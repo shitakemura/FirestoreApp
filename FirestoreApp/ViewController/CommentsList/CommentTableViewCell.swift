@@ -1,4 +1,3 @@
-
 import UIKit
 import Firebase
 
@@ -6,7 +5,7 @@ protocol CommentTableViewCellDelegate: class {
     func didTapOptionsMenu(of comment: Comment)
 }
 
-class CommentTableViewCell: UITableViewCell {
+final class CommentTableViewCell: UITableViewCell {
     // Outlets
     @IBOutlet private weak var userNameLabel: UILabel!
     @IBOutlet private weak var timeStampLabel: UILabel!
